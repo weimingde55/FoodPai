@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteTransparent"
+    android:orientation="vertical"
+    tools:context="com.mobilephone.foodpai.activity.FoodDetailsActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:src="@mipmap/left" />
+
+        <TextView
+            android:id="@+id/tvFoodClassName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/ivBack"
+            android:gravity="center"
+            android:text="食物类名"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/tvAll"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="全部"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/ic_down" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white">
+
+        <CheckBox
+            android:id="@+id/cbOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="营养素排序"
+            android:layout_marginRight="10dp"
+            android:button="@null"
+            android:layout_marginLeft="10dp"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/select_order_checked"
+            android:paddingLeft="5dp"
+            />
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/lvFood"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

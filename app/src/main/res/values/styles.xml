@@ -1,0 +1,88 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="EatKnowAndFoodTextBig">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="MainDetailText_i">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="MainDetailTextBig_i">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="MainDetailTextSmall_i">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="MainDetailRadioButton">
+        <item name="android:button">@null</item>
+        <item name="android:drawableBottom">@drawable/selector_main_detail_radiobutton</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="MainDetailButton">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/mainRed</item>
+        <item name="android:background">@drawable/select_main_detail_button</item>
+    </style>
+
+    <style name="MainDetailRadioButton_ii">
+        <item name="android:textColor">@color/mainGray</item>
+        <item name="android:button">@null</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:drawable">@drawable/selector_main_detail_ii_radiobutton</item>
+    </style>
+
+    <style name="MainDetailText_ii">
+        <item name="android:textColor">@color/mainGray</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+    
+    <style name="MainDetailText_ii.detail">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    
+    <style name="MainDetailText_ii.remark">
+        <item name="android:textColor">@color/mainRed</item>
+    </style>
+
+    <style name="MainDetailText_ii_black">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="MainDetailText_ii.red">
+        <item name="android:textColor">@color/mainRed</item>
+    </style>
+</resources>

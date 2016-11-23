@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_margin="5dp"
+    android:layout_marginBottom="1dp"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+
+    <com.mobilephone.foodpai.widget.MyCircleImageView
+        android:id="@+id/lvHeader"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp"
+        android:src="@mipmap/ic_launcher"
+        app:border_color="@color/white"
+        app:border_width="1dp" />
+
+    <RelativeLayout
+        android:id="@+id/rlCompareII"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/lvSuggest"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/food_suggest_bule"
+            android:visibility="visible" />
+
+        <RadioButton
+            android:id="@+id/rbAdd"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/shape_add_bg"
+            android:button="@null"
+            android:drawableLeft="@mipmap/adds"
+            android:text="加入对比"
+            android:textColor="@color/red"
+            android:visibility="gone" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/lvHeader"
+        android:layout_toLeftOf="@+id/rlCompareII"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvfoodName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:singleLine="true"
+            android:text="食物名称"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvCalory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="千卡/100克" />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

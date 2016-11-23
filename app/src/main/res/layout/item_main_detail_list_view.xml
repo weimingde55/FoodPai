@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="7"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvunit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3.6"
+        android:text="l两食堂的"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        style="@style/MainDetailText_ii.detail"/>
+
+    <TextView
+        android:id="@+id/tvWeight"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.7"
+        android:text="145.0克"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        style="@style/MainDetailText_ii"/>
+
+    <TextView
+        android:id="@+id/tvCalory"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.9"
+        android:text="168.0千卡"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        style="@style/MainDetailText_ii"/>
+</LinearLayout>

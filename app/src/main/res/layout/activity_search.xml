@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteTransparent"
+    android:orientation="vertical"
+    tools:context="com.mobilephone.foodpai.activity.SearchActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@id/ivBack"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/left" />
+
+        <ImageView
+            android:id="@+id/lvSeach"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/ic_home_search" />
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/lvSeach"
+            android:layout_toRightOf="@id/ivBack"
+            android:hint="请输入食物名称"
+            android:background="@null"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/grayIII" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grayII" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:id="@+id/llNoResultLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/llResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/whiteTransparent"
+                        android:gravity="center_vertical"
+                        android:text="搜索历史"
+                        android:textColor="@color/grayIII"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayII" />
+
+                    <com.mobilephone.foodpai.myview.MylistView
+                        android:id="@+id/lvSeachResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayII" />
+
+                    <LinearLayout
+                        android:id="@+id/llRemoveHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/delete" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="清空历史记录"
+                            android:textColor="@color/grayIII" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayII" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/whiteTransparent"
+                        android:gravity="center_vertical"
+                        android:text="大家都在搜"
+                        android:textColor="@color/grayIII"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayII" />
+
+                    <com.mobilephone.foodpai.myview.MyGridView
+                        android:id="@+id/gvSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:numColumns="2" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llResultLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:background="@color/whiteTransparent"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/whiteTransparent">
+
+                    <LinearLayout
+                        android:id="@+id/llOrder"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        >
+                        <CheckBox
+                            android:id="@+id/cbOrder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="营养素排序"
+                            android:layout_marginRight="10dp"
+                            android:button="@null"
+                            android:layout_marginLeft="10dp"
+                            android:drawablePadding="5dp"
+                            android:drawableRight="@drawable/select_order_checked"
+                            android:paddingLeft="5dp"
+                            />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/llRecomment"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        >
+
+                        <CheckBox
+                            android:id="@+id/cbRecomment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="食物推荐"
+                            android:layout_marginRight="10dp"
+                            android:button="@null"
+                            android:drawablePadding="5dp"
+                            android:drawableLeft="@drawable/select_recommend_food"
+                            android:paddingLeft="5dp"
+                            android:textColor="@color/red"
+                            android:visibility="visible"
+                            />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+                <com.mobilephone.foodpai.myview.MylistView
+                    android:id="@+id/lvSearchResultFood"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white"
+                    android:layout_height="match_parent"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

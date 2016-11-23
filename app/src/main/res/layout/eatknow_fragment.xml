@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/srflEatKnow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ecd">
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/rvEatKnow"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
+
+    <com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView
+        android:id="@+id/rvEatKnow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView>
+</RelativeLayout>

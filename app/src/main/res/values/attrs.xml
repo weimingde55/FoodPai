@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyCircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="MaterialLayout">
+        <attr name="myalpha" format="integer" />
+        <attr name="myalpha_step" format="integer" />
+        <attr name="myframerate" format="integer" />
+        <attr name="myduration" format="integer" />
+        <attr name="mycolor" format="color" />
+        <attr name="myscale" format="float" />
+    </declare-styleable>
+</resources>

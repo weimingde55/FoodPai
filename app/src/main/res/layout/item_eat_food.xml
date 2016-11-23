@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/cvRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rlRoot"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:id="@+id/llnormal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:weightSum="2.5"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.7"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:id="@+id/tvEatFoodTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="西班牙海鲜沙拉|你们要的瘦身沙拉"
+                    style="@style/EatKnowAndFoodTextBig" />
+
+                <TextView
+                    android:id="@+id/tvEatFoodFrom"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="日日煮DayDayC"
+                    android:layout_alignParentBottom="true"
+                    android:ellipsize="marquee"
+                    android:singleLine="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:focusable="true"
+                    />
+
+                <TextView
+                    android:id="@+id/tvReadCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4835"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true" />
+
+                <TextView
+                    android:id="@+id/tvEatFoodEye"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@mipmap/ic_watch"
+                    android:layout_toLeftOf="@+id/tvReadCount"
+                    android:layout_marginLeft="10dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivEatFoodPic"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:layout_margin="12dp"
+                android:background="#a0c7c4c4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSpecial"
+            android:layout_height="170dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvSpecialTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="怎樣拍出好看的图片"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="10dp"
+                style="@style/EatKnowAndFoodTextBig"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <ImageView
+                    android:id="@+id/ivEatFoodPics1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="#a0c7c4c4" />
+
+                <ImageView
+                    android:id="@+id/ivEatFoodPics2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:background="#a0c7c4c4" />
+
+                <ImageView
+                    android:id="@+id/ivEatFoodPics3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="#a0c7c4c4" />
+
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tvSpecialFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="来源"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"/>
+                <TextView
+                    android:id="@+id/tvSpecialEye"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvSpecialFrom"
+                    android:background="@mipmap/ic_watch"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"/>
+
+                <TextView
+                    android:id="@+id/tvSpecialReadCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1111"
+                    android:layout_toRightOf="@id/tvSpecialEye"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

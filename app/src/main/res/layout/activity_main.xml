@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.mobilephone.foodpai.widget.MaterialLayout
+        android:id="@+id/mlMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:myalpha="200"
+        app:mycolor="@color/menuTextColor"
+        app:myduration="200"
+        app:myscale="0.8">
+
+        <RadioGroup
+            android:id="@+id/rgMainMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbMenuHome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/selector_foods"
+                android:gravity="center"
+                android:text="食物百科"
+                android:textColor="@drawable/selector_menu_text_color"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rbMenuEat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_foodie"
+                android:gravity="center"
+                android:text="吃货街"
+                android:textColor="@drawable/selector_menu_text_color"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rbMenuMine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_my"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="@drawable/selector_menu_text_color"
+                android:textSize="12sp" />
+        </RadioGroup>
+    </com.mobilephone.foodpai.widget.MaterialLayout>
+
+
+    <FrameLayout
+        android:id="@+id/flMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/mlMenu" />
+</RelativeLayout>
