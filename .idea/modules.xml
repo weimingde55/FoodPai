@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Foodpai.iml" filepath="$PROJECT_DIR$/Foodpai.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FoodPai.iml" filepath="$PROJECT_DIR$/FoodPai.iml" group="FoodPai" />
+      <module fileurl="file://$PROJECT_DIR$/Fragment.iml" filepath="$PROJECT_DIR$/Fragment.iml" group="Fragment" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="FoodPai/app" />
     </modules>
   </component>
 </project>

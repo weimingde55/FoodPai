@@ -15,7 +15,7 @@ import com.mobilephone.foodpai.widget.MyCircleImageView;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -74,13 +74,13 @@ public class FoodClassDetailsAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        @Bind(R.id.lvHeader)
+        @BindView(R.id.lvHeader)
         MyCircleImageView lvHeader;
-        @Bind(R.id.tvfoodName)
+        @BindView(R.id.tvfoodName)
         TextView tvfoodName;
-        @Bind(R.id.tvCalory)
+        @BindView(R.id.tvCalory)
         TextView tvCalory;
-        @Bind(R.id.lvSuggest)
+        @BindView(R.id.lvSuggest)
         ImageView lvSuggest;
 
         ViewHolder(View view) {

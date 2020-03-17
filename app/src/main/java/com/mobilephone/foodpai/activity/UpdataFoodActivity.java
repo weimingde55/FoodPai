@@ -1,28 +1,29 @@
 package com.mobilephone.foodpai.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.mobilephone.foodpai.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class UpdataFoodActivity extends AppCompatActivity {
 
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
-    @Bind(R.id.ivI)
+    @BindView(R.id.ivI)
     ImageView ivI;
-    @Bind(R.id.rlUpload)
+    @BindView(R.id.rlUpload)
     RelativeLayout rlUpload;
-    @Bind(R.id.ivII)
+    @BindView(R.id.ivII)
     ImageView ivII;
-    @Bind(R.id.rlWrite)
+    @BindView(R.id.rlWrite)
     RelativeLayout rlWrite;
 
     @Override
@@ -33,7 +34,7 @@ public class UpdataFoodActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.ivBack)
-    public void onIvBackClick(View view){
+    public void onIvBackClick(View view) {
         finish();
     }
 }

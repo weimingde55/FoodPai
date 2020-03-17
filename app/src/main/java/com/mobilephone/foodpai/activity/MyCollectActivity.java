@@ -1,36 +1,33 @@
 package com.mobilephone.foodpai.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 import com.mobilephone.foodpai.R;
-import com.mobilephone.foodpai.bean.bmobbean.CollectBean;
-import com.mobilephone.foodpai.fragment.collect.CollectFragment;
-import com.mobilephone.foodpai.util.DaoBmobUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import cn.bmob.v3.exception.BmobException;
 
 public class MyCollectActivity extends AppCompatActivity {
 
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
-    @Bind(R.id.tabCollect)
+    @BindView(R.id.tabCollect)
     TabLayout tabCollect;
-    @Bind(R.id.vpCollect)
+    @BindView(R.id.vpCollect)
     ViewPager vpCollect;
-    private CollectFragment collectFragment;
     private List<Fragment> fragments = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +38,9 @@ public class MyCollectActivity extends AppCompatActivity {
 
     private void initFragment() {
         for (int i = 0; i < 2; i++) {
-            collectFragment = new CollectFragment();
+            Fragment collectFragment = new Fragment();
             Bundle bundle = new Bundle();
-            bundle.putInt("number",i+1);
+            bundle.putInt("number", i + 1);
             collectFragment.setArguments(bundle);
             fragments.add(collectFragment);
         }
@@ -60,7 +57,7 @@ public class MyCollectActivity extends AppCompatActivity {
 
             @Override
             public CharSequence getPageTitle(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         return "文章";
                     case 1:
@@ -73,7 +70,7 @@ public class MyCollectActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.ivBack)
-    public void onIvBack(){
+    public void onIvBack() {
         finish();
     }
 }

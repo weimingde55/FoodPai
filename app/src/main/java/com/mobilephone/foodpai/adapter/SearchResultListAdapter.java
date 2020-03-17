@@ -21,7 +21,7 @@ import com.mobilephone.foodpai.widget.MyCircleImageView;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -40,7 +40,7 @@ public class SearchResultListAdapter extends BaseAdapter {
         this.context = context;
         this.data = data;
         this.compelet = compelet;
-        this.aBoolean =aBoolean;
+        this.aBoolean = aBoolean;
         inflater = LayoutInflater.from(context);
     }
 
@@ -88,7 +88,7 @@ public class SearchResultListAdapter extends BaseAdapter {
                 Toast.makeText(context, "成功加入对比", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, SearchComparisonActivity.class);
                 intent.putExtra("code", code);
-                intent.putExtra("RL",aBoolean);
+                intent.putExtra("RL", aBoolean);
                 context.startActivity(intent);
                 ((Activity) context).finish();
             }
@@ -98,15 +98,15 @@ public class SearchResultListAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        @Bind(R.id.lvHeader)
+        @BindView(R.id.lvHeader)
         MyCircleImageView lvHeader;
-        @Bind(R.id.tvfoodName)
+        @BindView(R.id.tvfoodName)
         TextView tvfoodName;
-        @Bind(R.id.tvCalory)
+        @BindView(R.id.tvCalory)
         TextView tvCalory;
-        @Bind(R.id.lvSuggest)
+        @BindView(R.id.lvSuggest)
         ImageView lvSuggest;
-        @Bind(R.id.rbAdd)
+        @BindView(R.id.rbAdd)
         RadioButton rbAdd;
 
         ViewHolder(View view) {

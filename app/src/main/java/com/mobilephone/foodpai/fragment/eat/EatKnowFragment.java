@@ -4,13 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.adapter.EatKnowRVAdapter;
@@ -25,20 +26,20 @@ import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by Administrator on 2016/10/31.
  */
 public class EatKnowFragment extends BaseFragment {
 
-    //    @Bind(R.id.rvEatKnow)
+    //    @BindView(R.id.rvEatKnow)
 //    RecyclerView rvEatKnow;
-    @Bind(R.id.srflEatKnow)
+    @BindView(R.id.srflEatKnow)
     SwipeRefreshLayout srflEatKnow;
 
     private static final String TAG = "EatKnowFragment-test";
-    //    @Bind(R.id.rvEatKnow)
+    //    @BindView(R.id.rvEatKnow)
     private PullLoadMoreRecyclerView rvEatKnow;
 
     private View view;

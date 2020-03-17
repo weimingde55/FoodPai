@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -13,13 +11,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.mobilephone.foodpai.R;
@@ -42,9 +42,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import cn.bmob.v3.exception.BmobException;
 
 
@@ -52,73 +51,72 @@ public class FoodMainDetailsActivity extends AppCompatActivity {
 
     private static final int GET_SEARCH_DETAILS = 10;
     private static final String TAG = "test";
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.ivGoodsPic)
+    @BindView(R.id.ivGoodsPic)
     ImageView ivGoodsPic;
-    @Bind(R.id.tvGoodsName)
+    @BindView(R.id.tvGoodsName)
     TextView tvGoodsName;
-    @Bind(R.id.tvEnergy)
+    @BindView(R.id.tvEnergy)
     TextView tvEnergy;
-    @Bind(R.id.rbKilocalorie)
+    @BindView(R.id.rbKilocalorie)
     RadioButton rbKilocalorie;
-    @Bind(R.id.rbKilojoule)
+    @BindView(R.id.rbKilojoule)
     RadioButton rbKilojoule;
-    @Bind(R.id.radioGroup)
+    @BindView(R.id.radioGroup)
     RadioGroup radioGroup;
-    @Bind(R.id.tvUnit)
+    @BindView(R.id.tvUnit)
     TextView tvUnit;
-    @Bind(R.id.tvIngredientCalory)
+    @BindView(R.id.tvIngredientCalory)
     TextView tvIngredientCalory;
-    @Bind(R.id.tvLightsCalory)
+    @BindView(R.id.tvLightsCalory)
     TextView tvLightsCalory;
-    @Bind(R.id.tvIngredientProtein)
+    @BindView(R.id.tvIngredientProtein)
     TextView tvIngredientProtein;
-    @Bind(R.id.tvLightsProtein)
+    @BindView(R.id.tvLightsProtein)
     TextView tvLightsProtein;
-    @Bind(R.id.tvIngredientFat)
+    @BindView(R.id.tvIngredientFat)
     TextView tvIngredientFat;
-    @Bind(R.id.tvLightsFat)
+    @BindView(R.id.tvLightsFat)
     TextView tvLightsFat;
-    @Bind(R.id.tvInCarbohydrate)
+    @BindView(R.id.tvInCarbohydrate)
     TextView tvInCarbohydrate;
-    @Bind(R.id.tvLightsCarbohydrate)
+    @BindView(R.id.tvLightsCarbohydrate)
     TextView tvLightsCarbohydrate;
-    @Bind(R.id.tvInFiberDietary)
+    @BindView(R.id.tvInFiberDietary)
     TextView tvInFiberDietary;
-    @Bind(R.id.tvLightsFiberDietary)
+    @BindView(R.id.tvLightsFiberDietary)
     TextView tvLightsFiberDietary;
-    @Bind(R.id.tvGIvalue)
+    @BindView(R.id.tvGIvalue)
     TextView tvGIvalue;
-    @Bind(R.id.tvGIgrade)
+    @BindView(R.id.tvGIgrade)
     TextView tvGIgrade;
-    @Bind(R.id.tvGLvalue)
+    @BindView(R.id.tvGLvalue)
     TextView tvGLvalue;
-    @Bind(R.id.tvGLgrade)
+    @BindView(R.id.tvGLgrade)
     TextView tvGLgrade;
-    @Bind(R.id.ivCaloriesPic)
+    @BindView(R.id.ivCaloriesPic)
     ImageView ivCaloriesPic;
-    @Bind(R.id.tvRide)
+    @BindView(R.id.tvRide)
     TextView tvRide;
-    @Bind(R.id.tvCompare)
+    @BindView(R.id.tvCompare)
     TextView tvCompare;
-    @Bind(R.id.lvCalories)
+    @BindView(R.id.lvCalories)
     MylistView lvCalories;
-    @Bind(R.id.tvLight)
+    @BindView(R.id.tvLight)
     TextView tvLight;
-    @Bind(R.id.tvSuggest)
+    @BindView(R.id.tvSuggest)
     TextView tvSuggest;
-    @Bind(R.id.tvAppraise)
+    @BindView(R.id.tvAppraise)
     TextView tvAppraise;
-    @Bind(R.id.rgSwitch)
+    @BindView(R.id.rgSwitch)
     RadioGroup rgSwitch;
-    @Bind(R.id.rlCompare)
+    @BindView(R.id.rlCompare)
     RelativeLayout rlCompare;
-    @Bind(R.id.tvMultiple)
+    @BindView(R.id.tvMultiple)
     TextView tvMultiple;
-    @Bind(R.id.tvHead)
+    @BindView(R.id.tvHead)
     TextView tvHead;
-
 
 
     private MainDetailListViewAdapter detailLvAdapter;
@@ -136,7 +134,6 @@ public class FoodMainDetailsActivity extends AppCompatActivity {
     private String _calory;
 
     private List<UnitOfHeat> unitOfHeats = new ArrayList<>();
-
 
 
     boolean isCollect = false;//判断是否已经收藏
@@ -160,7 +157,7 @@ public class FoodMainDetailsActivity extends AppCompatActivity {
                             url = detailBean.getThumb_image_url();
                             imageUrl = detailBean.getLarge_image_url();
                             String fiber_dietary = detailBean.getFiber_dietary();//食物纤维
-                            String calory =  detailBean.getCalory();//热量
+                            String calory = detailBean.getCalory();//热量
                             String protein = detailBean.getProtein();//蛋白质
                             String carbohydrate = detailBean.getCarbohydrate();// 碳水化合物
                             String gi = detailBean.getGi();//Gi值
@@ -177,7 +174,7 @@ public class FoodMainDetailsActivity extends AppCompatActivity {
 
                             Glide.with(FoodMainDetailsActivity.this).load(url).into(ivGoodsPic);
                             tvGoodsName.setText(name);
-                            tvEnergy.setText(calory+"千卡");
+                            tvEnergy.setText(calory + "千卡");
 
                         }
                     }
@@ -235,6 +232,7 @@ public class FoodMainDetailsActivity extends AppCompatActivity {
 
     /**
      * 为ToolBar绑定菜单
+     *
      * @param menu
      * @return
      */
@@ -260,17 +258,17 @@ public class FoodMainDetailsActivity extends AppCompatActivity {
                 break;
             case R.id.action_like:
                 UserBean user = UserBean.getCurrentUser(UserBean.class);
-                if (user!=null) {
+                if (user != null) {
                     //增加
                     if (isCollect == false) {
-                        DaoBmobUtil.getInstance().onAdd(name,null,imageUrl,calory,code, new DaoBmobUtil.OnDaoAdd() {
+                        DaoBmobUtil.getInstance().onAdd(name, null, imageUrl, calory, code, new DaoBmobUtil.OnDaoAdd() {
                             @Override
                             public void onAdd(String s, BmobException e) {
                                 if (e == null) {
                                     Toast.makeText(FoodMainDetailsActivity.this, "收藏", Toast.LENGTH_SHORT).show();
                                     item.setIcon(R.mipmap.ic_news_keep_heighlight);
                                     onQuery();
-                                }else {
+                                } else {
                                     Toast.makeText(FoodMainDetailsActivity.this, "网络异常，请检查网络", Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -278,20 +276,20 @@ public class FoodMainDetailsActivity extends AppCompatActivity {
                         //删除
                     } else {
                         Log.e(TAG, "onOptionsItemSelected: ");
-                        DaoBmobUtil.getInstance().onDelete(map,name, new DaoBmobUtil.OnDelete() {
+                        DaoBmobUtil.getInstance().onDelete(map, name, new DaoBmobUtil.OnDelete() {
                             @Override
                             public void onDelete(BmobException e) {
                                 if (e == null) {
                                     Toast.makeText(FoodMainDetailsActivity.this, "取消收藏", Toast.LENGTH_SHORT).show();
                                     item.setIcon(R.mipmap.ic_news_keep_default);
                                     isCollect = false;
-                                }else {
+                                } else {
                                     Toast.makeText(FoodMainDetailsActivity.this, "网络异常，请检查网络", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
                     }
-                }else {
+                } else {
                     Intent intent = new Intent(this, LoginActivity.class);
                     startActivity(intent);
                 }
@@ -314,16 +312,16 @@ public class FoodMainDetailsActivity extends AppCompatActivity {
                     for (int i = 0; i < list.size(); i++) {
                         String titlename = list.get(i).getTitle();
                         String objectId = list.get(i).getObjectId();
-                        Log.e(TAG, "onQuery: "+titlename+"/"+objectId);
+                        Log.e(TAG, "onQuery: " + titlename + "/" + objectId);
                         map.put(titlename, objectId); //获得objectId并存储在map中
                         if (titlename.equals(name)) {
                             //设置收藏图标和文字
-                            Log.e(TAG, "onQueryequals: "+name);
+                            Log.e(TAG, "onQueryequals: " + name);
                             menu.findItem(R.id.action_like).setIcon(R.mipmap.ic_news_keep_heighlight);
                             isCollect = true;
                         }
                     }
-                }else {
+                } else {
                     Toast.makeText(FoodMainDetailsActivity.this, "网络异常，请检查网络", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -369,6 +367,7 @@ public class FoodMainDetailsActivity extends AppCompatActivity {
 
     /**
      * 放置布局1的数据
+     *
      * @param detailBean
      */
     private void placeData_i(FoodMainDetailBean detailBean) {
@@ -503,19 +502,19 @@ public class FoodMainDetailsActivity extends AppCompatActivity {
                 tvSuggest.setTextColor(getResources().getColor(R.color.light_red));
                 break;
         }
-        if(detailBean.getUnits() == null||detailBean.getUnits().size() == 0){
+        if (detailBean.getUnits() == null || detailBean.getUnits().size() == 0) {
             tvHead.setVisibility(View.GONE);
         }
 
-        if (compare.getAmount1() == null){
+        if (compare.getAmount1() == null) {
             rlCompare.setVisibility(View.GONE);
             ivCaloriesPic.setVisibility(View.GONE);
             tvMultiple.setVisibility(View.GONE);
             tvCompare.setVisibility(View.GONE);
-        }else {
-            DownLoadImageUtil.load(this,compare.getTarget_image_url(),R.mipmap.mq_ic_emoji_normal,R.mipmap.fail_img,ivCaloriesPic);
+        } else {
+            DownLoadImageUtil.load(this, compare.getTarget_image_url(), R.mipmap.mq_ic_emoji_normal, R.mipmap.fail_img, ivCaloriesPic);
             tvMultiple.setText(compare.getAmount1());
-            tvCompare.setText(compare.getAmount0()+compare.getUnit0()+detailBean.getName()+" ≈ "+compare.getAmount1()+compare.getUnit1()+compare.getTarget_name());
+            tvCompare.setText(compare.getAmount0() + compare.getUnit0() + detailBean.getName() + " ≈ " + compare.getAmount1() + compare.getUnit1() + compare.getTarget_name());
         }
 
     }

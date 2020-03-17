@@ -2,19 +2,20 @@ package com.mobilephone.foodpai;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 
-import butterknife.Bind;
+import androidx.appcompat.app.AppCompatActivity;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class WelcomeActivity extends AppCompatActivity {
 
 
-    @Bind(R.id.welcome_img)
+    @BindView(R.id.welcome_img)
     ImageView welcome_img;
 
     @Override

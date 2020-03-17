@@ -2,7 +2,6 @@ package com.mobilephone.foodpai.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
 import com.mobilephone.foodpai.R;
@@ -22,7 +23,7 @@ import com.mobilephone.foodpai.base.BaseFragment;
 import com.mobilephone.foodpai.bean.UserBean;
 import com.mobilephone.foodpai.widget.MyCircleImageView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -33,23 +34,23 @@ import butterknife.OnClick;
 public class MineFragment extends BaseFragment {
 
     private static final String TAG = "MineFragment-test";
-    @Bind(R.id.ivSeting)
+    @BindView(R.id.ivSeting)
     ImageView ivSeting;
-    @Bind(R.id.ivPhoto)
+    @BindView(R.id.ivPhoto)
     ImageView ivPhoto;
-    @Bind(R.id.rlPhoto)
+    @BindView(R.id.rlPhoto)
     RelativeLayout rlPhoto;
-    @Bind(R.id.ivMyCollect)
+    @BindView(R.id.ivMyCollect)
     ImageView ivMyCollect;
-    @Bind(R.id.rlMyCollect)
+    @BindView(R.id.rlMyCollect)
     RelativeLayout rlMyCollect;
-    @Bind(R.id.iv)
+    @BindView(R.id.iv)
     ImageView iv;
-    @Bind(R.id.rlUpload)
+    @BindView(R.id.rlUpload)
     RelativeLayout rlUpload;
-    @Bind(R.id.ivMyOrdr)
+    @BindView(R.id.ivMyOrdr)
     ImageView ivMyOrdr;
-    @Bind(R.id.rlMyCordr)
+    @BindView(R.id.rlMyCordr)
     RelativeLayout rlMyCordr;
     private View view;
     private TextView tvUserName;
@@ -105,7 +106,6 @@ public class MineFragment extends BaseFragment {
             String userCoverUrl = currentUser.getUserCover();
             Glide.with(getActivity())
                     .load(userCoverUrl)
-                    .skipMemoryCache(true)
                     .into(ivUserCover);
             Log.e(TAG, "onCreateView: " + currentUser.getUsername());
         } else {
@@ -138,7 +138,6 @@ public class MineFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 
 }

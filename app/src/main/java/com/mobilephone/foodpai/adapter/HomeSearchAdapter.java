@@ -11,7 +11,7 @@ import com.mobilephone.foodpai.R;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -51,11 +51,11 @@ public class HomeSearchAdapter extends BaseAdapter {
 
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.home_search_item, parent, false);
-            holder =new ViewHolder(convertView);
+            holder = new ViewHolder(convertView);
             convertView.setTag(holder);
 
-        }else {
-            holder= (ViewHolder) convertView.getTag();
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
         String s = data.get(position);
@@ -64,7 +64,7 @@ public class HomeSearchAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        @Bind(R.id.tvSearch)
+        @BindView(R.id.tvSearch)
         TextView tvSearch;
 
         ViewHolder(View view) {

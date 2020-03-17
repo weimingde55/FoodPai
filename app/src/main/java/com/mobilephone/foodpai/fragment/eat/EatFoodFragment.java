@@ -4,10 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.Nullable;
 
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.adapter.EatFoodRVAdapter;
@@ -35,17 +36,17 @@ public class EatFoodFragment extends BaseFragment {
     private EatFoodRVAdapter adapter;
     private boolean isRefresh;
     private List<EatFoodBean.FeedsBean> feedList = new ArrayList<>();
-    private Handler handler = new Handler(){
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            switch (msg.what){
+            switch (msg.what) {
                 case MESSAGE_SEND_FOOD_JSON:
                     List<EatFoodBean.FeedsBean> feeds = (List<EatFoodBean.FeedsBean>) msg.obj;
-                    if (!isRefresh){
+                    if (!isRefresh) {
                         feedList.clear();
                         feedList.addAll(feeds);
                         initRecyclerView();
-                    }else {
+                    } else {
                         feedList.addAll(feeds);
                         currentPager++;
                     }
@@ -83,13 +84,13 @@ public class EatFoodFragment extends BaseFragment {
             public void run() {
                 String json = HttpUtil.getEatFoodJson(getActivity(), pager);
                 EatFoodBean eatFoodBean = JsonUtil.parseEatFoodBean(json);
-                if (json != null){
-                    if (eatFoodBean != null && eatFoodBean.getFeeds() != null){
+                if (json != null) {
+                    if (eatFoodBean != null && eatFoodBean.getFeeds() != null) {
                         List<EatFoodBean.FeedsBean> feeds = eatFoodBean.getFeeds();
-                        Message msg = handler.obtainMessage(MESSAGE_SEND_FOOD_JSON,feeds);
+                        Message msg = handler.obtainMessage(MESSAGE_SEND_FOOD_JSON, feeds);
                         handler.sendMessage(msg);
                     }
-                }else {
+                } else {
                     Message msg = handler.obtainMessage(MESSAGE_NOTSEND_FOOD_JSON);
                     handler.sendMessage(msg);
                 }
@@ -97,9 +98,9 @@ public class EatFoodFragment extends BaseFragment {
         });
     }
 
-    public void initRecyclerView(){
-        if (adapter == null){
-            adapter = new EatFoodRVAdapter(getContext(),feedList);
+    public void initRecyclerView() {
+        if (adapter == null) {
+            adapter = new EatFoodRVAdapter(getContext(), feedList);
             rvEatFood.setAdapter(adapter);
             rvEatFood.setLinearLayout();
         }
@@ -133,8 +134,8 @@ public class EatFoodFragment extends BaseFragment {
                 EatFoodBean.FeedsBean feedsBean = feedList.get(position);
                 String link = feedsBean.getLink();
                 String title = feedsBean.getTitle();
-                intent.putExtra("link",link);
-                intent.putExtra("title",title);
+                intent.putExtra("link", link);
+                intent.putExtra("title", title);
                 startActivity(intent);
             }
         });

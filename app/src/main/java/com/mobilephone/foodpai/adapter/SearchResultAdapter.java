@@ -12,7 +12,7 @@ import com.mobilephone.foodpai.R;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -73,7 +73,7 @@ public class SearchResultAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        @Bind(R.id.tvFoodName)
+        @BindView(R.id.tvFoodName)
         TextView tvFoodName;
 
         ViewHolder(View view) {

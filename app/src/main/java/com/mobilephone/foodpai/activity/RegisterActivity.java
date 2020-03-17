@@ -4,8 +4,6 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -16,10 +14,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputLayout;
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.bean.UserBean;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
@@ -28,29 +29,29 @@ import cn.bmob.v3.listener.SaveListener;
 public class RegisterActivity extends AppCompatActivity {
 
     private static final String TAG = "RegisterActivity-test";
-    @Bind(R.id.rlUserInfo)
+    @BindView(R.id.rlUserInfo)
     RelativeLayout rlUserInfo;
-    @Bind(R.id.etUsername)
+    @BindView(R.id.etUsername)
     EditText etUsername;
-    @Bind(R.id.tilUsername)
+    @BindView(R.id.tilUsername)
     TextInputLayout tilUsername;
-    @Bind(R.id.etPassword)
+    @BindView(R.id.etPassword)
     EditText etPassword;
-    @Bind(R.id.tilPassword)
+    @BindView(R.id.tilPassword)
     TextInputLayout tilPassword;
-    @Bind(R.id.etAgainPassword)
+    @BindView(R.id.etAgainPassword)
     EditText etAgainPassword;
-    @Bind(R.id.tilAgainPassword)
+    @BindView(R.id.tilAgainPassword)
     TextInputLayout tilAgainPassword;
-    @Bind(R.id.etEmail)
+    @BindView(R.id.etEmail)
     EditText etEmail;
-    @Bind(R.id.tilEmail)
+    @BindView(R.id.tilEmail)
     TextInputLayout tilEmail;
-    @Bind(R.id.btnClearInfo)
+    @BindView(R.id.btnClearInfo)
     Button btnClearInfo;
-    @Bind(R.id.btnOkRegister)
+    @BindView(R.id.btnOkRegister)
     Button btnOkRegister;
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
     private Toast registerToastOK, registerToastERROR;
     private ProgressDialog registerDialog;

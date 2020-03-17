@@ -1,16 +1,17 @@
 package com.mobilephone.foodpai.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.mobilephone.foodpai.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.bmob.v3.BmobUser;
@@ -23,19 +24,19 @@ import cn.sharesdk.wechat.friends.Wechat;
 public class SetingActivity extends AppCompatActivity {
 
     private static final String TAG = "SetingActivity-test";
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
-    @Bind(R.id.ivI)
+    @BindView(R.id.ivI)
     ImageView ivI;
-    @Bind(R.id.tvCache)
+    @BindView(R.id.tvCache)
     TextView tvCache;
-    @Bind(R.id.rlCache)
+    @BindView(R.id.rlCache)
     RelativeLayout rlCache;
-    @Bind(R.id.rlSuggest)
+    @BindView(R.id.rlSuggest)
     RelativeLayout rlSuggest;
-    @Bind(R.id.rlScore)
+    @BindView(R.id.rlScore)
     RelativeLayout rlScore;
-    @Bind(R.id.rlShare)
+    @BindView(R.id.rlShare)
     RelativeLayout rlShare;
     private Button btnClearUser;
 

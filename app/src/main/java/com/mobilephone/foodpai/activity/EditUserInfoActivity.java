@@ -3,8 +3,6 @@ package com.mobilephone.foodpai.activity;
 import android.app.ProgressDialog;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -19,11 +17,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputLayout;
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.bean.UserBean;
 import com.mobilephone.foodpai.util.DaoBmobUtil;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
@@ -32,34 +33,34 @@ import cn.bmob.v3.listener.UpdateListener;
 public class EditUserInfoActivity extends AppCompatActivity {
 
     private static final String TAG = "EditUserInfoActivity-test";
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
-    @Bind(R.id.tvCheckUserInfo)
+    @BindView(R.id.tvCheckUserInfo)
     TextView tvCheckUserInfo;
-    @Bind(R.id.tvSavekUserInfo)
+    @BindView(R.id.tvSavekUserInfo)
     TextView tvSavekUserInfo;
 
-    @Bind(R.id.etNikeName)
+    @BindView(R.id.etNikeName)
     EditText etNikeName;
-    @Bind(R.id.etGender)
+    @BindView(R.id.etGender)
     EditText etGender;
-    @Bind(R.id.etAge)
+    @BindView(R.id.etAge)
     EditText etAge;
-    @Bind(R.id.etTall)
+    @BindView(R.id.etTall)
     EditText etTall;
-    @Bind(R.id.etEmail)
+    @BindView(R.id.etEmail)
     EditText etEmail;
-    @Bind(R.id.etPhoneNumber)
+    @BindView(R.id.etPhoneNumber)
     EditText etPhoneNumber;
-    @Bind(R.id.rlBar)
+    @BindView(R.id.rlBar)
     RelativeLayout rlBar;
-    @Bind(R.id.tvCheckEmail)
+    @BindView(R.id.tvCheckEmail)
     TextView tvCheckEmail;
-    @Bind(R.id.tvUpdateEmail)
+    @BindView(R.id.tvUpdateEmail)
     TextView tvUpdateEmail;
-    @Bind(R.id.tvCheckPhoneNumber)
+    @BindView(R.id.tvCheckPhoneNumber)
     TextView tvCheckPhoneNumber;
-    @Bind(R.id.tvUpdatePhoneNumber)
+    @BindView(R.id.tvUpdatePhoneNumber)
     TextView tvUpdatePhoneNumber;
     private int screenWidth;
     private PopupWindow popupWindow;

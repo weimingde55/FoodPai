@@ -12,7 +12,7 @@ import com.mobilephone.foodpai.bean.CompeletFoodBean;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -124,11 +124,11 @@ public class CompareAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        @Bind(R.id.tvLeftInfo)
+        @BindView(R.id.tvLeftInfo)
         TextView tvLeftInfo;
-        @Bind(R.id.tvCenter)
+        @BindView(R.id.tvCenter)
         TextView tvCenter;
-        @Bind(R.id.tvRightInfo)
+        @BindView(R.id.tvRightInfo)
         TextView tvRightInfo;
 
         ViewHolder(View view) {

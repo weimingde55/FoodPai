@@ -1,8 +1,6 @@
 package com.mobilephone.foodpai.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,13 +10,16 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.bean.EatFoodBean;
 import com.mobilephone.foodpai.util.DownLoadImageUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -26,7 +27,7 @@ import butterknife.ButterKnife;
  */
 public class EatFoodRVAdapter extends RecyclerView.Adapter<EatFoodRVAdapter.ViewHolder> {
 
-    @Bind(R.id.rlRoot)
+    @BindView(R.id.rlRoot)
     RelativeLayout rlRoot;
     private Context context;
     private List<EatFoodBean.FeedsBean> feedsBeanList;
@@ -67,7 +68,7 @@ public class EatFoodRVAdapter extends RecyclerView.Adapter<EatFoodRVAdapter.View
             holder.llnormal.setVisibility(View.VISIBLE);
             String url = images.get(0);
 //            DownLoadImageUtil.load(context, url, R.mipmap.mq_ic_emoji_normal, R.mipmap.fail_img, holder.ivEatFoodPic);
-            DownLoadImageUtil.noCacheLoad(context,url,R.mipmap.fail_img,holder.ivEatFoodPic);
+            DownLoadImageUtil.noCacheLoad(context, url, R.mipmap.fail_img, holder.ivEatFoodPic);
             holder.tvEatFoodTitle.setText(title);
             holder.tvEatFoodFrom.setText(source);
             holder.tvReadCount.setText(tail);
@@ -90,7 +91,7 @@ public class EatFoodRVAdapter extends RecyclerView.Adapter<EatFoodRVAdapter.View
         holder.rlRoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (onItemClickListener!=null){
+                if (onItemClickListener != null) {
                     onItemClickListener.onItemClick(layoutPosition);
                 }
             }
@@ -100,37 +101,37 @@ public class EatFoodRVAdapter extends RecyclerView.Adapter<EatFoodRVAdapter.View
 
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.tvEatFoodTitle)
+        @BindView(R.id.tvEatFoodTitle)
         TextView tvEatFoodTitle;
-        @Bind(R.id.tvEatFoodFrom)
+        @BindView(R.id.tvEatFoodFrom)
         TextView tvEatFoodFrom;
-        @Bind(R.id.tvReadCount)
+        @BindView(R.id.tvReadCount)
         TextView tvReadCount;
-        @Bind(R.id.tvEatFoodEye)
+        @BindView(R.id.tvEatFoodEye)
         TextView tvEatFoodEye;
-        @Bind(R.id.ivEatFoodPic)
+        @BindView(R.id.ivEatFoodPic)
         ImageView ivEatFoodPic;
-        @Bind(R.id.llnormal)
+        @BindView(R.id.llnormal)
         LinearLayout llnormal;
-        @Bind(R.id.tvSpecialTitle)
+        @BindView(R.id.tvSpecialTitle)
         TextView tvSpecialTitle;
-        @Bind(R.id.ivEatFoodPics1)
+        @BindView(R.id.ivEatFoodPics1)
         ImageView ivEatFoodPics1;
-        @Bind(R.id.ivEatFoodPics2)
+        @BindView(R.id.ivEatFoodPics2)
         ImageView ivEatFoodPics2;
-        @Bind(R.id.ivEatFoodPics3)
+        @BindView(R.id.ivEatFoodPics3)
         ImageView ivEatFoodPics3;
-        @Bind(R.id.tvSpecialFrom)
+        @BindView(R.id.tvSpecialFrom)
         TextView tvSpecialFrom;
-        @Bind(R.id.tvSpecialEye)
+        @BindView(R.id.tvSpecialEye)
         TextView tvSpecialEye;
-        @Bind(R.id.tvSpecialReadCount)
+        @BindView(R.id.tvSpecialReadCount)
         TextView tvSpecialReadCount;
-        @Bind(R.id.llSpecial)
+        @BindView(R.id.llSpecial)
         LinearLayout llSpecial;
-        @Bind(R.id.cvRoot)
+        @BindView(R.id.cvRoot)
         CardView cvRoot;
-        @Bind(R.id.rlRoot)
+        @BindView(R.id.rlRoot)
         RelativeLayout rlRoot;
 
         ViewHolder(View view) {
@@ -145,7 +146,7 @@ public class EatFoodRVAdapter extends RecyclerView.Adapter<EatFoodRVAdapter.View
         this.onItemClickListener = onItemClickListener;
     }
 
-    public interface OnItemClickListener{
+    public interface OnItemClickListener {
         void onItemClick(int position);
     }
 }

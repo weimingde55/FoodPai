@@ -6,7 +6,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.util.LruCache;
+
+import androidx.collection.LruCache;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;

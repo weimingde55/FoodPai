@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -19,6 +17,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputLayout;
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.bean.UserBean;
 import com.mobilephone.foodpai.util.DaoBmobUtil;
@@ -30,7 +31,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
@@ -46,34 +47,38 @@ import cn.sharesdk.wechat.friends.Wechat;
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity-test";
-    @Bind(R.id.etUsername)
-    EditText etUsername;
-    @Bind(R.id.tilUsername)
-    TextInputLayout tilUsername;
-    @Bind(R.id.etPassword)
-    EditText etPassword;
-    @Bind(R.id.tilPassword)
-    TextInputLayout tilPassword;
-    @Bind(R.id.btnLogin)
-    Button btnLogin;
-    @Bind(R.id.rlLoginContent)
-    RelativeLayout rlLoginContent;
-    @Bind(R.id.tvUnknowPassword)
-    TextView tvUnknowPassword;
-    @Bind(R.id.tvRegister)
-    TextView tvRegister;
-    @Bind(R.id.ivQQLogin)
-    ImageView ivQQLogin;
-    @Bind(R.id.ivSinaLogin)
-    ImageView ivSinaLogin;
-    @Bind(R.id.ivWeXinLogin)
-    ImageView ivWeXinLogin;
-    @Bind(R.id.etAgainPassword)
-    EditText etAgainPassword;
-    @Bind(R.id.tilAgainPassword)
-    TextInputLayout tilAgainPassword;
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
+    @BindView(R.id.rlBar)
+    RelativeLayout rlBar;
+    @BindView(R.id.etUsername)
+    EditText etUsername;
+    @BindView(R.id.tilUsername)
+    TextInputLayout tilUsername;
+    @BindView(R.id.etPassword)
+    EditText etPassword;
+    @BindView(R.id.tilPassword)
+    TextInputLayout tilPassword;
+    @BindView(R.id.etAgainPassword)
+    EditText etAgainPassword;
+    @BindView(R.id.tilAgainPassword)
+    TextInputLayout tilAgainPassword;
+    @BindView(R.id.rlLoginContent)
+    RelativeLayout rlLoginContent;
+    @BindView(R.id.btnLogin)
+    Button btnLogin;
+    @BindView(R.id.tvUnknowPassword)
+    TextView tvUnknowPassword;
+    @BindView(R.id.tvRegister)
+    TextView tvRegister;
+    @BindView(R.id.ivQQLogin)
+    ImageView ivQQLogin;
+    @BindView(R.id.ivSinaLogin)
+    ImageView ivSinaLogin;
+    @BindView(R.id.ivWeXinLogin)
+    ImageView ivWeXinLogin;
+    @BindView(R.id.rlLogin)
+    RelativeLayout rlLogin;
     private ProgressDialog registerDialog;
     private String[] strings;
     private String snsTypeQQ = BmobUser.BmobThirdUserAuth.SNS_TYPE_QQ;

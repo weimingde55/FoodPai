@@ -1,13 +1,14 @@
 package com.mobilephone.foodpai.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.mobilephone.foodpai.R;
@@ -21,36 +22,36 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class EatHomeImageActivity extends AppCompatActivity {
     private static final String TAG = "EatHomeImageActivity-test";
-    @Bind(R.id.ivGoodCover)
+    @BindView(R.id.ivGoodCover)
     ImageView ivGoodCover;
-    @Bind(R.id.rlGood)
+    @BindView(R.id.rlGood)
     RelativeLayout rlGood;
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
-    @Bind(R.id.ivEatFoodShare)
+    @BindView(R.id.ivEatFoodShare)
     ImageView ivEatFoodShare;
-    @Bind(R.id.rlBar)
+    @BindView(R.id.rlBar)
     RelativeLayout rlBar;
-    @Bind(R.id.ivUserCover)
+    @BindView(R.id.ivUserCover)
     MyCircleImageView ivUserCover;
-    @Bind(R.id.tvUserName)
+    @BindView(R.id.tvUserName)
     TextView tvUserName;
-    @Bind(R.id.upDataTime)
+    @BindView(R.id.upDataTime)
     TextView upDataTime;
-    @Bind(R.id.rlTop)
+    @BindView(R.id.rlTop)
     RelativeLayout rlTop;
-    @Bind(R.id.ivFoodImage)
+    @BindView(R.id.ivFoodImage)
     ImageView ivFoodImage;
-    @Bind(R.id.tvEatFoodContent)
+    @BindView(R.id.tvEatFoodContent)
     TextView tvEatFoodContent;
-    @Bind(R.id.svMainContent)
+    @BindView(R.id.svMainContent)
     ScrollView svMainContent;
     private EatHomeFoodBean.FeedsBean feedsBean;
     private String url;
@@ -78,11 +79,9 @@ public class EatHomeImageActivity extends AppCompatActivity {
 
         Glide.with(this)
                 .load(url)
-                .skipMemoryCache(true)
                 .into(ivFoodImage);
         Glide.with(this)
                 .load(userCoverUrl)
-                .skipMemoryCache(true)
                 .into(ivUserCover);
         tvEatFoodContent.setText(description);
         tvUserName.setText(title);
@@ -90,7 +89,8 @@ public class EatHomeImageActivity extends AppCompatActivity {
 
     }
 
-    boolean isGood=false;
+    boolean isGood = false;
+
     private void initClickListener() {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,12 +107,12 @@ public class EatHomeImageActivity extends AppCompatActivity {
         rlGood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isGood==false){
+                if (isGood == false) {
                     ivGoodCover.setImageResource(R.mipmap.good_yes);
-                    isGood=true;
-                }else {
+                    isGood = true;
+                } else {
                     ivGoodCover.setImageResource(R.mipmap.good_noyes);
-                    isGood=false;
+                    isGood = false;
                 }
             }
         });
@@ -136,7 +136,7 @@ public class EatHomeImageActivity extends AppCompatActivity {
     }
 
 
-    public void showShare( ) {
+    public void showShare() {
         ShareSDK.initSDK(this);
         OnekeyShare oks = new OnekeyShare();
         //关闭sso授权

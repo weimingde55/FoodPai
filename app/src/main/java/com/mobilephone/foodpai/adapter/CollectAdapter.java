@@ -13,7 +13,7 @@ import com.mobilephone.foodpai.bean.bmobbean.CollectBean;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -69,9 +69,9 @@ public class CollectAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        @Bind(R.id.tvTitle)
+        @BindView(R.id.tvTitle)
         TextView tvTitle;
-        @Bind(R.id.rlRoot)
+        @BindView(R.id.rlRoot)
         RelativeLayout rlRoot;
 
         ViewHolder(View view) {

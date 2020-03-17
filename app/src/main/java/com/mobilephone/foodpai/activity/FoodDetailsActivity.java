@@ -4,13 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.adapter.FoodClassDetailsAdapter;
@@ -21,7 +22,7 @@ import com.mobilephone.foodpai.util.ThreadUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
@@ -29,19 +30,19 @@ import butterknife.OnItemClick;
 public class FoodDetailsActivity extends AppCompatActivity {
 
     private static final int GET_FOOD_DETAILS_DATA = 10;
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
-    @Bind(R.id.tvFoodClassName)
+    @BindView(R.id.tvFoodClassName)
     TextView tvFoodClassName;
-    @Bind(R.id.lvFood)
+    @BindView(R.id.lvFood)
     ListView lvFood;
     String foodClassName;
     String kind;
     int position;
     List<FoodDetailsBean.FoodsBean> foods;
-    @Bind(R.id.tvAll)
+    @BindView(R.id.tvAll)
     TextView tvAll;
-    @Bind(R.id.cbOrder)
+    @BindView(R.id.cbOrder)
     CheckBox cbOrder;
 
     private Handler handler = new Handler() {
@@ -93,7 +94,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
         FoodDetailsBean.FoodsBean foodsBean = foods.get(position);
         String code = foodsBean.getCode();
         Intent intent = new Intent(this, FoodMainDetailsActivity.class);
-        intent.putExtra("code",code);
+        intent.putExtra("code", code);
         startActivity(intent);
 
 

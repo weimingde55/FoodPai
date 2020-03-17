@@ -14,7 +14,7 @@ import com.mobilephone.foodpai.util.DownLoadImageUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -130,9 +130,9 @@ public class HomeAdapter extends BaseAdapter {
 
 
      class Holder {
-        @Bind(R.id.ivSortImg)
+        @BindView(R.id.ivSortImg)
         ImageView ivSortImg;
-        @Bind(R.id.tvSortName)
+        @BindView(R.id.tvSortName)
         TextView tvSortName;
 
         Holder(View view) {

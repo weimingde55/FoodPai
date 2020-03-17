@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +12,9 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.activity.EatFoodActivity;
@@ -35,7 +36,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -48,19 +49,19 @@ public class HomeFragment extends BaseFragment {
 
     private static final int MSG_JSON_FOODENCYCLOPEDIA = 10;
     private static final String TAG = "hometest";
-    @Bind(R.id.llSearch)
+    @BindView(R.id.llSearch)
     LinearLayout llSearch;
-    @Bind(R.id.ivAnalyze)
+    @BindView(R.id.ivAnalyze)
     ImageButton ivAnalyze;
-    @Bind(R.id.ivSearch)
+    @BindView(R.id.ivSearch)
     ImageButton ivSearch;
-    @Bind(R.id.ivQRCode)
+    @BindView(R.id.ivQRCode)
     ImageButton ivQRCode;
-    @Bind(R.id.gvFoods)
+    @BindView(R.id.gvFoods)
     MyGridView gvFoods;
-    @Bind(R.id.gvHot)
+    @BindView(R.id.gvHot)
     MyGridView gvHot;
-    @Bind(R.id.gvChain)
+    @BindView(R.id.gvChain)
     MyGridView gvChain;
 
 
@@ -116,9 +117,10 @@ public class HomeFragment extends BaseFragment {
     public void onIvAnalyse(View view) {
         startActivity(new Intent(getContext(), EatFoodActivity.class));
     }
+
     @OnClick(R.id.ivSearch)
     public void onIvSearchClick(View view) {
-        startActivity(new Intent(getContext(),SearchComparisonActivity.class));
+        startActivity(new Intent(getContext(), SearchComparisonActivity.class));
     }
 
     @Override
@@ -203,7 +205,7 @@ public class HomeFragment extends BaseFragment {
 
 
     @OnClick(R.id.ivQRCode)
-    public void onIvQRCodeClick(){
+    public void onIvQRCodeClick() {
         readQRCode();
     }
 
@@ -212,18 +214,18 @@ public class HomeFragment extends BaseFragment {
      * 启动扫描二维码
      */
     public void readQRCode() {
-        startActivityForResult(new Intent(getActivity(),CaptureActivity.class),100);
+        startActivityForResult(new Intent(getActivity(), CaptureActivity.class), 100);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
-        if (resultCode==getActivity().RESULT_OK) {
+        if (resultCode == getActivity().RESULT_OK) {
             String result = intent.getExtras().getString("result");
             try {
                 URL url = new URL(result);
                 Intent webIntent = new Intent(getActivity(), FoodHomeWebActivity.class);
-                webIntent.putExtra("link",result);
+                webIntent.putExtra("link", result);
                 startActivity(webIntent);
             } catch (Exception e) {
                 onDialog(result);
@@ -233,8 +235,7 @@ public class HomeFragment extends BaseFragment {
     }
 
 
-
-    public void onDialog(String result){
+    public void onDialog(String result) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("扫码结果")
                 .setMessage(result)
@@ -244,6 +245,5 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

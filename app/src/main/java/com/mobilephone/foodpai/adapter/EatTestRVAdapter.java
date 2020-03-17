@@ -1,7 +1,6 @@
 package com.mobilephone.foodpai.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,13 +8,15 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.bean.EatTestBean;
 import com.mobilephone.foodpai.util.DownLoadImageUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -50,12 +51,12 @@ public class EatTestRVAdapter extends RecyclerView.Adapter<EatTestRVAdapter.View
         holder.tvReaded.setText(feedsBean.getTail());
 //        Glide.with(context).load(Uri.parse(feedsBean.getBackground())).into(holder.ivBackground);
 //        DownLoadImageUtil.load(context, feedsBean.getBackground(), R.mipmap.mq_ic_emoji_normal, R.mipmap.fail_img, holder.ivBackground);
-        DownLoadImageUtil.noCacheLoad(context, feedsBean.getBackground(),R.mipmap.fail_img, holder.ivBackground);
+        DownLoadImageUtil.noCacheLoad(context, feedsBean.getBackground(), R.mipmap.fail_img, holder.ivBackground);
         final int layoutPosition = holder.getLayoutPosition();
         holder.rlRoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (onItemClickListener!=null){
+                if (onItemClickListener != null) {
                     onItemClickListener.onItemClick(layoutPosition);
                 }
             }
@@ -70,15 +71,15 @@ public class EatTestRVAdapter extends RecyclerView.Adapter<EatTestRVAdapter.View
 
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.ivBackground)
+        @BindView(R.id.ivBackground)
         ImageView ivBackground;
-        @Bind(R.id.tvInfo)
+        @BindView(R.id.tvInfo)
         TextView tvInfo;
-        @Bind(R.id.tvTitle)
+        @BindView(R.id.tvTitle)
         TextView tvTitle;
-        @Bind(R.id.tvReaded)
+        @BindView(R.id.tvReaded)
         TextView tvReaded;
-        @Bind(R.id.rlRoot)
+        @BindView(R.id.rlRoot)
         RelativeLayout rlRoot;
 
         ViewHolder(View view) {
@@ -93,7 +94,7 @@ public class EatTestRVAdapter extends RecyclerView.Adapter<EatTestRVAdapter.View
         this.onItemClickListener = onItemClickListener;
     }
 
-    public interface OnItemClickListener{
-       void onItemClick(int position);
-   }
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
 }

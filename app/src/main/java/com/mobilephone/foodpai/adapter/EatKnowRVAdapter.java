@@ -1,8 +1,6 @@
 package com.mobilephone.foodpai.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,13 +10,16 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.bean.EatKnowBean;
 import com.mobilephone.foodpai.util.DownLoadImageUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -70,7 +71,7 @@ public class EatKnowRVAdapter extends RecyclerView.Adapter<EatKnowRVAdapter.View
             holder.llSpecial.setVisibility(View.VISIBLE);
             holder.llnormal.setVisibility(View.GONE);
 //            DownLoadImageUtil.load(context, images.get(0), R.mipmap.mq_ic_emoji_normal, R.mipmap.fail_img, holder.ivEatKnowPics1);
-           DownLoadImageUtil.noCacheLoad(context, images.get(0), R.mipmap.fail_img, holder.ivEatKnowPics1);
+            DownLoadImageUtil.noCacheLoad(context, images.get(0), R.mipmap.fail_img, holder.ivEatKnowPics1);
 //            DownLoadImageUtil.load(context, images.get(1), R.mipmap.mq_ic_emoji_normal, R.mipmap.fail_img, holder.ivEatKnowPics2);
             DownLoadImageUtil.noCacheLoad(context, images.get(1), R.mipmap.fail_img, holder.ivEatKnowPics2);
 
@@ -87,7 +88,7 @@ public class EatKnowRVAdapter extends RecyclerView.Adapter<EatKnowRVAdapter.View
         holder.rlRoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (onItemClickListener!=null){
+                if (onItemClickListener != null) {
                     onItemClickListener.onItemClick(layoutPosition);
                 }
             }
@@ -105,37 +106,37 @@ public class EatKnowRVAdapter extends RecyclerView.Adapter<EatKnowRVAdapter.View
 
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.tvEatKnowTitle)
+        @BindView(R.id.tvEatKnowTitle)
         TextView tvEatKnowTitle;
-        @Bind(R.id.tvEatKnowFrom)
+        @BindView(R.id.tvEatKnowFrom)
         TextView tvEatKnowFrom;
-        @Bind(R.id.tvEatKnowEye)
+        @BindView(R.id.tvEatKnowEye)
         TextView tvEatKnowEye;
-        @Bind(R.id.tvReadCount)
+        @BindView(R.id.tvReadCount)
         TextView tvReadCount;
-        @Bind(R.id.ivEatKnowPic)
+        @BindView(R.id.ivEatKnowPic)
         ImageView ivEatKnowPic;
-        @Bind(R.id.llnormal)
+        @BindView(R.id.llnormal)
         LinearLayout llnormal;
-        @Bind(R.id.tvSpecialTitle)
+        @BindView(R.id.tvSpecialTitle)
         TextView tvSpecialTitle;
-        @Bind(R.id.ivEatKnowPics1)
+        @BindView(R.id.ivEatKnowPics1)
         ImageView ivEatKnowPics1;
-        @Bind(R.id.ivEatKnowPics2)
+        @BindView(R.id.ivEatKnowPics2)
         ImageView ivEatKnowPics2;
-        @Bind(R.id.ivEatKnowPics3)
+        @BindView(R.id.ivEatKnowPics3)
         ImageView ivEatKnowPics3;
-        @Bind(R.id.tvSpecialFrom)
+        @BindView(R.id.tvSpecialFrom)
         TextView tvSpecialFrom;
-        @Bind(R.id.tvSpecialEye)
+        @BindView(R.id.tvSpecialEye)
         TextView tvSpecialEye;
-        @Bind(R.id.tvSpecialReadCount)
+        @BindView(R.id.tvSpecialReadCount)
         TextView tvSpecialReadCount;
-        @Bind(R.id.llSpecial)
+        @BindView(R.id.llSpecial)
         LinearLayout llSpecial;
-        @Bind(R.id.cvRoot)
+        @BindView(R.id.cvRoot)
         CardView cvRoot;
-        @Bind(R.id.rlRoot)
+        @BindView(R.id.rlRoot)
         RelativeLayout rlRoot;
 
         ViewHolder(View view) {
@@ -150,7 +151,7 @@ public class EatKnowRVAdapter extends RecyclerView.Adapter<EatKnowRVAdapter.View
         this.onItemClickListener = onItemClickListener;
     }
 
-    public interface OnItemClickListener{
+    public interface OnItemClickListener {
         void onItemClick(int position);
     }
 }

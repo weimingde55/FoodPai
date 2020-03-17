@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -16,6 +15,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.activity.LoginActivity;
 import com.mobilephone.foodpai.bean.UserBean;
@@ -26,7 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.bmob.v3.exception.BmobException;
@@ -36,19 +37,19 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
 public class WebActivity extends AppCompatActivity {
 
     private static final String TAG = "test";
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
-    @Bind(R.id.webView)
+    @BindView(R.id.webView)
     WebView webView;
-    @Bind(R.id.llShare)
+    @BindView(R.id.llShare)
     LinearLayout llShare;
-    @Bind(R.id.tvCollect)
+    @BindView(R.id.tvCollect)
     TextView tvCollect;
-    @Bind(R.id.pbProgressBar)
+    @BindView(R.id.pbProgressBar)
     ProgressBar pbProgressBar;
-    @Bind(R.id.llCollect)
+    @BindView(R.id.llCollect)
     LinearLayout llCollect;
-    @Bind(R.id.ivCollect)
+    @BindView(R.id.ivCollect)
     ImageView ivCollect;
     private String url;
     private String title;

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.adapter.HomeSearchAdapter;
@@ -31,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
@@ -41,30 +42,30 @@ public class SearchActivity extends AppCompatActivity {
     private static final int GET_SEARCH_DATA = 10;
     private static final int GET_SEARCH_RESULT_DATA = 20;
     private static final String TAG = "SearchActivity-test";
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
-    @Bind(R.id.lvSeach)
+    @BindView(R.id.lvSeach)
     ImageView lvSeach;
-    @Bind(R.id.etSearch)
+    @BindView(R.id.etSearch)
     EditText etSearch;
-    @Bind(R.id.gvSearch)
+    @BindView(R.id.gvSearch)
     MyGridView gvSearch;
-    @Bind(R.id.lvSeachResult)
+    @BindView(R.id.lvSeachResult)
     ListView lvSeachResult;
-    @Bind(R.id.llRemoveHistory)
+    @BindView(R.id.llRemoveHistory)
     LinearLayout llRemoveHistory;
-    @Bind(R.id.llResult)
+    @BindView(R.id.llResult)
     LinearLayout llResult;
-    @Bind(R.id.llNoResultLayout)
+    @BindView(R.id.llNoResultLayout)
     LinearLayout llNoResultLayout;
 
-    @Bind(R.id.llOrder)
+    @BindView(R.id.llOrder)
     LinearLayout llOrder;
-    @Bind(R.id.llRecomment)
+    @BindView(R.id.llRecomment)
     LinearLayout llRecomment;
-    @Bind(R.id.lvSearchResultFood)
+    @BindView(R.id.lvSearchResultFood)
     ListView lvSearchResultFood;
-    @Bind(R.id.llResultLayout)
+    @BindView(R.id.llResultLayout)
     LinearLayout llResultLayout;
     Map<Object, String> map;
     List<SearchFoodBean.ItemsBean> searchFoodBeanItems;
@@ -101,7 +102,7 @@ public class SearchActivity extends AppCompatActivity {
                             searchFoodBeanItems = searchFoodBean.getItems();
                             if (searchFoodBeanItems != null) {
 //                                SearchResultAdapter searchResultAdapter = new SearchResultAdapter(SearchActivity.this, searchResult);
-                                SearchResultListAdapter resultListAdapter = new SearchResultListAdapter(SearchActivity.this, searchFoodBeanItems,compelet,aBoolean);
+                                SearchResultListAdapter resultListAdapter = new SearchResultListAdapter(SearchActivity.this, searchFoodBeanItems, compelet, aBoolean);
                                 lvSearchResultFood.setAdapter(resultListAdapter);
                                 Log.e(TAG, "handleMessage: aBoolean==" + aBoolean);
                             }
@@ -135,8 +136,8 @@ public class SearchActivity extends AppCompatActivity {
         SearchFoodBean.ItemsBean itemsBean = searchFoodBeanItems.get(position);
         String code = itemsBean.getCode();
         Intent intent = new Intent(this, FoodMainDetailsActivity.class);
-        if (compelet!=null){
-            intent.putExtra("compelet",compelet);
+        if (compelet != null) {
+            intent.putExtra("compelet", compelet);
         }
         intent.putExtra("code", code);
         startActivity(intent);
@@ -179,7 +180,7 @@ public class SearchActivity extends AppCompatActivity {
         final String s = keywords.get(position);
         if (s != null) {
             map = new HashMap<Object, String>();
-            map.put(s,s);
+            map.put(s, s);
             etSearch.setText(s);
             ThreadUtil.execute(new Runnable() {
                 @Override

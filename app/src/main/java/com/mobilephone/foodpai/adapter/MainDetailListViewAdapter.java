@@ -12,7 +12,7 @@ import com.mobilephone.foodpai.myinterface.UnitOfHeat;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -63,11 +63,11 @@ public class MainDetailListViewAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        @Bind(R.id.tvunit)
+        @BindView(R.id.tvunit)
         TextView tvUnit;
-        @Bind(R.id.tvWeight)
+        @BindView(R.id.tvWeight)
         TextView tvWeight;
-        @Bind(R.id.tvCalory)
+        @BindView(R.id.tvCalory)
         TextView tvCalory;
 
         ViewHolder(View view) {

@@ -2,8 +2,6 @@ package com.mobilephone.foodpai.ui;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -13,22 +11,24 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.mobilephone.foodpai.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class FoodHomeWebActivity extends AppCompatActivity {
 
     private static final String TAG = "test";
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
-    @Bind(R.id.tvTitle)
+    @BindView(R.id.tvTitle)
     TextView tvTitle;
-    @Bind(R.id.pbProgressBar)
+    @BindView(R.id.pbProgressBar)
     ProgressBar pbProgressBar;
-    @Bind(R.id.webView)
+    @BindView(R.id.webView)
     WebView webView;
     private String url;
 

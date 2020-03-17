@@ -4,15 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.adapter.CompareAdapter;
 import com.mobilephone.foodpai.adapter.SearchCompeletFoodAdapter;
@@ -25,7 +25,7 @@ import com.mobilephone.foodpai.util.ThreadUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -33,19 +33,19 @@ public class SearchComparisonActivity extends AppCompatActivity {
 
     private static final int GET_COMPELET_DATA = 20;
     private static final String TAG = "test";
-    @Bind(R.id.ivBack)
+    @BindView(R.id.ivBack)
     ImageView ivBack;
-    @Bind(R.id.ivVs)
+    @BindView(R.id.ivVs)
     ImageView ivVs;
-    @Bind(R.id.llRightAdd)
+    @BindView(R.id.llRightAdd)
     LinearLayout llRightAdd;
-    @Bind(R.id.llLeftAdd)
+    @BindView(R.id.llLeftAdd)
     LinearLayout llLeftAdd;
-    @Bind(R.id.mlvCompelet)
+    @BindView(R.id.mlvCompelet)
     MylistView mlvCompelet;
-    @Bind(R.id.ivRight)
+    @BindView(R.id.ivRight)
     ImageView ivRight;
-    @Bind(R.id.ivLeft)
+    @BindView(R.id.ivLeft)
     ImageView ivLeft;
     boolean aBoolean = false, RL = false;
 
@@ -66,14 +66,14 @@ public class SearchComparisonActivity extends AppCompatActivity {
                                 List<CompeletFoodBean.NutritionBean> nutritionRight = compeletFoodBean.getNutrition();
                                 if (nutritionRight != null) {
                                     setAdapterData(compeletFoodBean, nutritionRight);
-                                    Glide.with(SearchComparisonActivity.this).load(compeletFoodBean.getThumb_image_url()).skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.ALL).into(ivRight);
+                                    Glide.with(SearchComparisonActivity.this).load(compeletFoodBean.getThumb_image_url()).into(ivRight);
                                 }
 
                             } else if (RL == false && rightNutrition == null) {
                                 List<CompeletFoodBean.NutritionBean> nutritionLeft = compeletFoodBean.getNutrition();
                                 if (nutritionLeft != null) {
                                     setAdapterData(compeletFoodBean, nutritionLeft);
-                                    Glide.with(SearchComparisonActivity.this).load(compeletFoodBean.getThumb_image_url()).skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.ALL).into(ivLeft);
+                                    Glide.with(SearchComparisonActivity.this).load(compeletFoodBean.getThumb_image_url()).into(ivLeft);
                                 }
 
                             } else if (RL && leftBeanNutrition != null) {
@@ -122,11 +122,11 @@ public class SearchComparisonActivity extends AppCompatActivity {
         Log.d(TAG, "rightCompareData = [" + rightCompareData + "]");
         if (rightCompareData != null) {
             rightBean = JsonUtil.parseCompeletFoodBean(rightCompareData);
-            if (rightBean!=null){
+            if (rightBean != null) {
                 rightNutrition = rightBean.getNutrition();
             }
             try {
-                Glide.with(SearchComparisonActivity.this).load(rightBean.getLarge_image_url()).skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.ALL).into(ivRight);
+                Glide.with(SearchComparisonActivity.this).load(rightBean.getLarge_image_url()).into(ivRight);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -138,11 +138,11 @@ public class SearchComparisonActivity extends AppCompatActivity {
         Log.d(TAG, "leftCompareData = [" + leftCompareData + "]");
         if (leftCompareData != null) {
             leftBean = JsonUtil.parseCompeletFoodBean(leftCompareData);
-            if (leftBean!=null){
+            if (leftBean != null) {
                 leftBeanNutrition = leftBean.getNutrition();
             }
             try {
-                Glide.with(SearchComparisonActivity.this).load(leftBean.getLarge_image_url()).skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.ALL).into(ivLeft);
+                Glide.with(SearchComparisonActivity.this).load(leftBean.getLarge_image_url()).into(ivLeft);
             } catch (Exception e) {
                 e.printStackTrace();
             }

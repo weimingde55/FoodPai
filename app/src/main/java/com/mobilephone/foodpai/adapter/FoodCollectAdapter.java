@@ -14,7 +14,7 @@ import com.mobilephone.foodpai.util.DownLoadImageUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -67,18 +67,18 @@ public class FoodCollectAdapter extends BaseAdapter {
         String calory = collectBean.getCalory();
         holder.tvFoodName.setText(name);
         holder.tvFoodInfo.setText(calory);
-        DownLoadImageUtil.noCacheLoad(context,imgUrl,R.mipmap.fail_img,holder.ivFoodImg);
+        DownLoadImageUtil.noCacheLoad(context, imgUrl, R.mipmap.fail_img, holder.ivFoodImg);
         notifyDataSetChanged();
 
         return convertView;
     }
 
     static class ViewHolder {
-        @Bind(R.id.ivFoodImg)
+        @BindView(R.id.ivFoodImg)
         ImageView ivFoodImg;
-        @Bind(R.id.tvFoodName)
+        @BindView(R.id.tvFoodName)
         TextView tvFoodName;
-        @Bind(R.id.tvFoodInfo)
+        @BindView(R.id.tvFoodInfo)
         TextView tvFoodInfo;
 
         ViewHolder(View view) {

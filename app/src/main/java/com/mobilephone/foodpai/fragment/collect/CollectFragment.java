@@ -2,12 +2,13 @@ package com.mobilephone.foodpai.fragment.collect;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import androidx.annotation.Nullable;
 
 import com.mobilephone.foodpai.R;
 import com.mobilephone.foodpai.activity.FoodMainDetailsActivity;
@@ -21,7 +22,7 @@ import com.mobilephone.foodpai.util.DaoBmobUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.bmob.v3.exception.BmobException;
 
@@ -30,7 +31,7 @@ import cn.bmob.v3.exception.BmobException;
  */
 public class CollectFragment extends BaseFragment {
     private static final String TAG = "test";
-    @Bind(R.id.lvCollect)
+    @BindView(R.id.lvCollect)
     ListView lvCollect;
     private View view;
 
@@ -63,13 +64,13 @@ public class CollectFragment extends BaseFragment {
                     intent.putExtra("title", title);
                     startActivity(intent);
                     isRefresh = true;
-                }else {
+                } else {
                     CollectBean collectBean = listFood.get(position);
                     String code = collectBean.getCode();
                     Intent intent = new Intent(getActivity(), FoodMainDetailsActivity.class);
-                    intent.putExtra("code",code);
+                    intent.putExtra("code", code);
                     startActivity(intent);
-                    isRefresh=true;
+                    isRefresh = true;
                 }
             }
         });
@@ -124,6 +125,5 @@ public class CollectFragment extends BaseFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }
