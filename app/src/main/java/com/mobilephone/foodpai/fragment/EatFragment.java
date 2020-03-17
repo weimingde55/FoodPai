@@ -42,15 +42,15 @@ public class EatFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (view == null) {
-            view = inflater.inflate(R.layout.fragment_eat, container, false);
-            //初始化fragment
-            initFragment();
-            //初始化导航按钮
-            initEatMenu();
-            //初始化viewpager
-            initViewPager();
-        }
+
+        view = inflater.inflate(R.layout.fragment_eat, container, false);
+        //初始化fragment
+        initFragment();
+        //初始化导航按钮
+        initEatMenu();
+        //初始化viewpager
+        initViewPager();
+
         return view;
     }
 

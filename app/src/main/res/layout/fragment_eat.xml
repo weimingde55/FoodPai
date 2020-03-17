@@ -56,11 +56,11 @@
             android:textColor="@drawable/selector_menu_text_color" />
     </RadioGroup>
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/vpEat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rgEatMenu">
 
-    </android.support.v4.view.ViewPager>
+    </androidx.viewpager.widget.ViewPager>
 </RelativeLayout>

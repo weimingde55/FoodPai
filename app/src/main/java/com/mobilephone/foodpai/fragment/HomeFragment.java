@@ -64,7 +64,6 @@ public class HomeFragment extends BaseFragment {
     @BindView(R.id.gvChain)
     MyGridView gvChain;
 
-
     private List<FoodEncyclopediaBean.GroupBean.CategoriesBean> FoodsCategoriesList = new ArrayList<>();
     private List<FoodEncyclopediaBean.GroupBean.CategoriesBean> HotCategoriesList = new ArrayList<>();
     private List<FoodEncyclopediaBean.GroupBean.CategoriesBean> ChainCategoriesList = new ArrayList<>();
@@ -81,7 +80,7 @@ public class HomeFragment extends BaseFragment {
      * 并用JsonUtil获得bean集
      * 初始化构造器
      */
-    Handler handler = new Handler() {
+    private Handler handler = new Handler() {
 
         @Override
         public void handleMessage(Message msg) {
@@ -125,12 +124,9 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (view == null) {
-            view = inflater.inflate(R.layout.fragment_home, container, false);
-            ButterKnife.bind(this, view);
-            getJson();
-        }
-
+        view = inflater.inflate(R.layout.fragment_home, container, false);
+        ButterKnife.bind(this, view);
+        getJson();
         TextView tvTest = (TextView) view.findViewById(R.id.tvTest);
         tvTest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,17 +136,13 @@ public class HomeFragment extends BaseFragment {
             }
         });
 
-        gvFoods.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Intent intent = new Intent(getContext(), FoodDetailsActivity.class);
-                String name = FoodsCategoriesList.get(position).getName();
-                intent.putExtra("name", name);
-                intent.putExtra("kind", "group");
-                intent.putExtra("position", position);
-                getActivity().startActivity(intent);
-            }
+        gvFoods.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(getContext(), FoodDetailsActivity.class);
+            String name = FoodsCategoriesList.get(position).getName();
+            intent.putExtra("name", name);
+            intent.putExtra("kind", "group");
+            intent.putExtra("position", position);
+            getActivity().startActivity(intent);
         });
         gvChain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

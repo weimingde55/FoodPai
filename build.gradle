@@ -8,6 +8,9 @@ buildscript {
             name 'Google'
         }
     }
+    dependencies {
+        classpath 'com.jakewharton:butterknife-gradle-plugin:10.1.0'
+    }
 //    dependencies {
 //        classpath 'com.android.tools.build:gradle:3.6.1'
 //    }

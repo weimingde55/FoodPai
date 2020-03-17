@@ -24,7 +24,7 @@
         android:layout_marginTop="80dp"
         android:background="@drawable/shape_login_content">
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                 android:drawablePadding="15dp"
                 android:enabled="false"
                 android:paddingLeft="10dp" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <View
             android:layout_width="match_parent"
@@ -49,7 +49,7 @@
             android:layout_below="@id/tilUsername"
             android:background="#e2e1e1" />
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
                 android:drawablePadding="15dp"
                 android:inputType="textPassword"
                 android:paddingLeft="10dp" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <View
             android:layout_width="match_parent"
@@ -75,7 +75,7 @@
             android:layout_below="@id/tilPassword"
             android:background="#e2e1e1" />
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilAgainPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                 android:drawablePadding="15dp"
                 android:inputType="textPassword"
                 android:paddingLeft="10dp" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </RelativeLayout>
 
